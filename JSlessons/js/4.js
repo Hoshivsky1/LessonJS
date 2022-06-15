@@ -54,7 +54,7 @@ if (hamburger === 3 && cola || fries === 3 && nuggets) {
    console.log('Done!');
 }
 
-if ("Ёжик" > "яблоко"){
+if ("Їжак" > "яблуко"){
     console.log("ej");
 }else{
     console.log("apple");
