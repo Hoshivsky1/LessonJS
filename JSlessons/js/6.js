@@ -1,36 +1,36 @@
 
-// let num = 20;
+let num = 20;
 
-// function showFirstMessage(text){
-//     console.log(text);
-//     let num = 10;
-//     console.log(num);
-// }
+function showFirstMessage(text){
+    console.log(text);
+    let num = 10;
+    console.log(num);
+}
 
-// showFirstMessage("Hi Bro!");
-// console.log(num);
+showFirstMessage("Hi Bro!");
+console.log(num);
 
-// function calc(a, b){
-//     return (a + b);
-// }
+function calc(a, b){
+    return (a + b);
+}
 
-// console.log(calc(4,3));
+console.log(calc(4,3));
 
 
-// function ret(){
-//     let num = 50;
-//     return num;
-// }
+function ret(){
+    let num = 50;
+    return num;
+}
 
-// const anotherNum = ret();
-// console.log(anotherNum);
+const anotherNum = ret();
+console.log(anotherNum);
 
-// const logger = function() {
-//     console.log("Hello");
-// };
-// logger();
+const logger = function() {
+    console.log("Hello");
+};
+logger();
 
-// const calcu = (a, b) => a + b; 
+const calcu = (a, b) => a + b; 
 
 
 const usdCurr = 28;
