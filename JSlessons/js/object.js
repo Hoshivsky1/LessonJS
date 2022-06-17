@@ -37,3 +37,16 @@ for(let key in options) {
 }
 
 console.log(counter);
+
+//! copy object
+
+let obj = {
+    a: 1,
+    b: 2,
+    c: {
+        g: 5,
+        f: 10,
+    }
+};
+let objCopy = Object.assign({}, obj);
+console.log(typeof(objCopy));
