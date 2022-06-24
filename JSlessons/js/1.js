@@ -6,4 +6,11 @@ console.log(`https://someurl.com/${category}/5`);
 
 const user = 'Maxim';
 
-alert(`Hello, ${user}`);
+// alert(`Hello, ${user}`);
+
+var a = [];
+a.push("first");
+a.push("second");
+
+//Вывод в консоль
+console.log(a);

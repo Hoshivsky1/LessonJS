@@ -1,42 +1,23 @@
-const btns = document.querySelectorAll('button'),
-      overlay = document.querySelector('.overlay');
-// btn.onclick = function() {
-//     alert('Click');
-// };
+const boxesQuery = document.querySelectorAll('.box');
+const boxesGet = document.getElementsByClassName('box');
 
-// btn.onclick = function() {
-//     alert('Second click');
-// };
-let i = 0;
-const deleteElement = (e) => {
-    console.log(e.currentTarget);
-    console.log(e.type);
-    // i++;
-    // if (i == 2) {
-    //     btn.removeEventListener('click', deleteElement);
-    // }
-};
-
-btns.forEach(btn => {
-    btn.addEventListener('click', deleteElement, {once: true});
-});
-// btn.addEventListener('click', deleteElement);
-// overlay.addEventListener('click', deleteElement);
-
-const link = document.querySelector('a');
-
-link.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    console.log(event.target);
+boxesQuery.forEach(box => {
+    if (box.matches('.this')) {
+        console.log('This one1');
+    }     
 });
 
+console.log(boxesQuery[0].closest('.wrapper')); 
+boxesQuery[0].remove();
+boxesGet[0].remove();
 
-// btn.addEventListener('click', (e) => {
-//     e.target.remove();
-// });
+for (let i = 0; i< 5; i++) {
+    const div = document.createElement('div');
+    div.classList.add('box');
+    document.body.append(div);
+}
+console.log(boxesQuery);
+console.log(boxesGet);
+console.log(document.body.children);
 
-// btn.addEventListener('click', () => {
-//     alert('Second click');
-// });
-
+console.log(Array.from(boxesGet));
