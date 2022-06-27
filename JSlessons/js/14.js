@@ -1,54 +1,51 @@
-const user = {
-    name: 'Max',
-    surname: 'Tor',
-    birthday: '20/03/1993',
-    showMyPublicData: function() {
-        console.log(`${this.name} ${this.surname}`);
+// let user = {name: 'Ivan'};
+
+// let map = new WeakMap();
+
+// map.set(user, 'data');
+// user = null;
+
+// console.log(map);
+
+let cache = new WeakMap();
+
+function cacheUser(user){
+    if (!cache.has(user)) {
+        cache.set(user, Date.now());
     }
-};
 
-// for (const key of user) {
-//     console.log(user[key]);
-// }
-
-const arr = ['a', 'b', 'c'];
-Array.prototype.someMethod = function() {};
-
-console.dir(arr);
-for (const key of arr) {
-    console.log(key);
+    return cache.get(user);
 }
 
-// const str = 'string';
+let lena = {name:'Elena'};
+let alex = {name:'Alex'};
 
-// for (const key in str) {
-//     console.log(str[key]);
-// }
+cacheUser(lena);
+cacheUser(alex);
 
-const money = {
-    john: 500,
-    ivan: 1000,
-    max: 5000,
-    sayHello: function() {
-        console.log('Hello');
-    }
-};
+lena = null;
 
-money[Symbol.iterator] = function() {
-    return {
-        current: this.john,
-        last: this.max,
-        next() {
-            if (this.current < this.last) {
-                this.current = this.current + 500;
-                return {done:false, value: this.current}
-            } else {
-                return {done : true}
-            }
-            // {done: true, value: 123}
-        }
-    }
-} 
+console.log(cache.has(lena));
+console.log(cache.has(alex));
 
-const iterator = money[Symbol.iterator]();
-console.log(iterator.next());
+//*=================================================================
+//WeakSet
+// add, has, delete
+
+let messages = [
+    {text: 'Hello', from: 'Max',},
+    {text: 'Hi', from: 'ax',},
+    {text: '...', from: 'M',},
+];
+
+let readMessages = new WeakSet();
+
+readMessages.add(messages[0]);
+// readMessages.add(messages[1]); 
+
+readMessages.add(messages[0]);
+messages.shift();
+console.log(readMessages.has(messages[0]));
+
+//!Хранилище даних - контролюють використовування памяті
+
