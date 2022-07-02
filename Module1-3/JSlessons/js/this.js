@@ -51,7 +51,7 @@ function count(num) {
 }
 
 const doubl = count.bind(2);
-console.log(doubl(13));
+console.log(doubl  (13));
 
 //*==================================================================================
 const obj = {
