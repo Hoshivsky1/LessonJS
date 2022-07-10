@@ -1,15 +1,15 @@
-// function* generator() {
-//     yield 'S';
-//     yield 'c';
-//     yield 'r';
-//     yield 'i';
-//     yield 'p';
-//     yield 't';
-// }
+function* generator() {
+    yield 'S';
+    yield 'c';
+    yield 'r';
+    yield 'i';
+    yield 'p';
+    yield 't';
+}
 
-// const str = generator();
+const str = generator();
 
-// console.log(str.next().value);
+console.log(str.next().value);
 
 function* count(n) {
     for(let i = 0; i<n; i++) {
